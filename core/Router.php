@@ -19,9 +19,34 @@ class Router
     {
         $path = $this->request->getPath();
         $method = $this->request->getMethod();
-
         $callback = $this->routes[$method][$path] ?? false;
+        
+        if (!$callback)
+        {
+            return 'Not Found';
+        }
+        return $this->renderContent($callback);
+    }
 
-        var_dump($callback);
+    public function renderView($view)
+    {
+        ob_start();
+        require_once __DIR__ . "/../views/home.php";
+        return ob_get_clean();
+    }
+
+    public function renderLayout()
+    {
+        ob_start();
+        require_once __DIR__ . "/../views/layouts/app.php";
+        return ob_get_clean();
+    }
+
+    public function renderContent($view)
+    {
+        $contentLayout = $this->renderLayout();
+        $contentView = $this->renderView($view);
+        
+        return str_replace('{{content}}', (string) $contentView, (string) $contentLayout);
     }
 }

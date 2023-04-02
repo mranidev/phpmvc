@@ -1,11 +1,11 @@
 <?php
 
-include_once __DIR__ . "/vendor/autoload.php";
+include_once __DIR__ . "/../vendor/autoload.php";
 
 use app\core\Application;
 use app\controllers\HomeController;
 
-$app = new Application;
+$app = new Application(dirname(__DIR__));
 
 $app->router->get('/', [HomeController::class, 'index']);
 

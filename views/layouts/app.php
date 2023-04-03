@@ -7,6 +7,7 @@
     <title>PHP/MVC From Scratch</title>
 </head>
 <body>
+    <h1>Application Layout</h1>
     {{content}}
 </body>
 </html>

@@ -11,9 +11,15 @@ class Router
         $this->response = $response;
         $this->request  = $request;
     }
+    
     public function get($path, $callback)
     {
         $this->routes['get'][$path] = $callback;
+    }
+
+    public function post($path, $callback)
+    {
+        $this->routes['post'][$path] = $callback;
     }
 
     public function resolve()
@@ -38,7 +44,7 @@ class Router
             $callback[0] = new $callback[0]();
         }
         // var_dump($callback);
-        return call_user_func($callback);
+        return call_user_func($callback, $this->request);
         
     }
 

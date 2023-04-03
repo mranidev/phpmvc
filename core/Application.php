@@ -12,11 +12,13 @@ class Application
     
     public function __construct($dir)
     {
-        self::$dir = $dir;
         $this->response = new Response;
-        self::$app = $this;
-        $this->request = new Request;
-        $this->router = new Router($this->request, $this->response);
+        $this->request  = new Request;
+
+        self::$dir      = $dir;
+        self::$app      = $this;
+        
+        $this->router   = new Router($this->request, $this->response);
     }
 
     public function run()

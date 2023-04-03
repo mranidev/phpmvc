@@ -9,7 +9,7 @@ class Router
     public function __construct(Request $request, Response $response)
     {
         $this->response = $response;
-        $this->request = $request;
+        $this->request  = $request;
     }
     public function get($path, $callback)
     {
@@ -18,8 +18,8 @@ class Router
 
     public function resolve()
     {
-        $path = $this->request->getPath();
-        $method = $this->request->getMethod();
+        $path     = $this->request->getPath();
+        $method   = $this->request->getMethod();
         $callback = $this->routes[$method][$path] ?? false;
         
         if (!$callback)

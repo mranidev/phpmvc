@@ -10,8 +10,11 @@ class AuthController extends Controller
 {
     public function register(Request $request)
     {
+        $this->setLayout('auth');
+        
         if ($request->isPost())
         {
+            
             $data = $request->getBody();
             $registerModel = new RegisterModel;
             $registerModel->save($data);

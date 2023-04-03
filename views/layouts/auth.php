@@ -17,7 +17,7 @@
             <img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
         </a>
         </nav>
-        <h1>Application Layout</h1>
+        <h1>Authentication Layout</h1>
         {{content}}
     </div>
 

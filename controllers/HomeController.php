@@ -10,7 +10,8 @@ class HomeController extends Controller
     {
         $vars = 
         [
-            "title" => "Welcome to MVC From Scratch"
+            "title" => "Welcome to MVC From Scratch",
+            "about" => "This is a simple php mvc from scratch for learning purposes",
         ];
         return $this->render('home', $vars);
     }

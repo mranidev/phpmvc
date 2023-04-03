@@ -6,7 +6,8 @@ use app\core\Model;
 
 class RegisterModel extends Model
 {
-    public string $name;
+    public string $first_name;
+    public string $last_name;
     public string $email;
     public string $password;
     public string $confirmPassword;

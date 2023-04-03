@@ -7,6 +7,8 @@
     <title>PHP/MVC From Scratch</title>
     <!-- Bootstrap Stylesheet -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
@@ -17,7 +19,6 @@
             <img src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
         </a>
         </nav>
-        <h1>Application Layout</h1>
         {{content}}
     </div>
 

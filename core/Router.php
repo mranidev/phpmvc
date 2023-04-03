@@ -43,13 +43,17 @@ class Router
         {
             $callback[0] = new $callback[0]();
         }
-        // var_dump($callback);
+
         return call_user_func($callback, $this->request);
         
     }
 
-    public function renderView($view)
+    public function renderView($view, $vars = [])
     {
+        foreach($vars as $key => $value)
+        {
+            $$key = $value;
+        }
         ob_start();
         require_once Application::$dir . "/views/$view.php";
         return ob_get_clean();
@@ -62,10 +66,10 @@ class Router
         return ob_get_clean();
     }
 
-    public function renderContent($view)
+    public function renderContent($view, $vars = [])
     {
         $contentLayout = $this->renderLayout();
-        $contentView   = $this->renderView($view);
+        $contentView   = $this->renderView($view, $vars);
         
         return str_replace('{{content}}', (string) $contentView, (string) $contentLayout);
     }

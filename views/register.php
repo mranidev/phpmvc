@@ -17,16 +17,20 @@
             <div class="row">
                 <div class="col-sm-6 mb-3">
                     <label>First Name</label>
-                    <input type="text" name="first_name" id="first_name" class="input-field">
+                    <input type="text" name="first_name" id="first_name" value="<?php echo $model->first_name; ?>"
+                    class="form-control <?php echo $model->hasError('first_name') ? ' is-invalid' : ''; ?>">
+                    <div class="invalid-feedback">
+                        <small><?php echo $model->getFirstError('first_name'); ?></small>
+                    </div>
                 </div>
                 <div class="col-sm-6 mb-3">
                     <label>Last Name</label>
-                    <input type="text" name="last_name" id="last_name" class="input-field">
+                    <input type="text" name="last_name" id="last_name" class="input-field" value="<?php echo $model->last_name; ?>">
                 </div>
             </div>
             <div class="mb-3">
                 <label>Your Email</label>
-                <input type="email" class="input-field" name="email" required>
+                <input type="text" class="input-field" name="email" value="<?php echo $model->email; ?>">
             </div>
             <div class="row">
                 <div class="col-sm-6 mb-3">

@@ -9,22 +9,33 @@ use app\models\RegisterModel;
 class AuthController extends Controller
 {
     public function register(Request $request)
-    {
-        $this->setLayout('auth');
-        
+    {   
+        $errors = [];     
+        $registerModel = new RegisterModel;
+        $data = $request->getBody();
+        $registerModel->save($data);
         if ($request->isPost())
         {
             
-            $data = $request->getBody();
-            $registerModel = new RegisterModel;
-            $registerModel->save($data);
             
             if ( $registerModel->validate() && $registerModel->register() )
             {
                 return "Successful Registration";
             }
-            return "Processing Form";
+            
+            // print '<pre>';
+            // var_dump($registerModel->errors);
+            // print '</pre>';
+            
+            $this->setLayout('auth');
+            return $this->render('register', [
+                "model" => $registerModel
+            ]);
+
         }
-        return $this->render('register');
+        $this->setLayout('auth');
+        return $this->render('register', [
+            "model" => $registerModel
+        ]);
     }
 }

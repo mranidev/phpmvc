@@ -52,14 +52,9 @@ Please read [CONTRIBUTING.md] for details on our code of conduct, and the proces
 
 ## Acknowledgments
 
-<<<<<<< HEAD
 
 -  **Build PHP MVC Framework by The Codeholic Youtube Series**
 -  **Hope UI Design System by Iqonic**
 
-=======
--   Build PHP MVC Framework by The Codeholic 
-https://www.youtube.com/watch?v=WKy-N0q3WRo&list=PLLQuc_7jk__Uk_QnJMPndbdKECcTEwTA1
->>>>>>> 24f561bce431dfab3ef9bc86164de19b9d352590
 
 I hope this helps! Let me know if you have any further questions.
